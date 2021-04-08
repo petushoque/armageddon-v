@@ -1,0 +1,51 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    padding: 37px 0 24px;
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.header::after {
+    content: "";
+    width: 100%;
+    border-bottom: 1px solid black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.header__header {
+    max-width: 414px;
+}
+
+.header__title {
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 48px;
+    margin: 0;
+    padding: 0;
+}
+
+.header__subtitle {
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 8px 0 0;
+    padding: 0;
+}
+
+.header__nav {
+    display: flex;
+    flex-direction:row;
+}

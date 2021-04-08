@@ -1,0 +1,82 @@
+.asteroid {
+    width: 100%;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    max-height: 200px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.asteroid__hazardous {
+    background: linear-gradient(90deg, #FFB199 0%, #FF0844 100%);
+}
+
+.asteroid__unhazardous {
+    background: linear-gradient(90deg, #CFF37D 0%, #7DE88C 100%);
+}
+
+.asteroid__info {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 0 40px;
+}
+
+.asteroid__digits {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.asteroid__points {
+    content: '';
+    border-bottom: 1px dashed #000000;
+}
+
+.asteroid__title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    text-decoration-line: underline;
+    color: #000000;
+    padding: 0;
+    margin: 0 0 16px 0;
+}
+
+.asteroid__paragraph {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: flex-end;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+.asteroid__save-world {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 24px 56px 0;
+}
+
+.asteroid__button {
+    background: #186DD6;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 16px;
+    width: 158px;
+    height: 48px;
+
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    margin: 8px 0 0;
+}
