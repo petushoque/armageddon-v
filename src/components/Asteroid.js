@@ -1,6 +1,9 @@
 import React from "react";
 import './Asteroid.css'
 
+import dino from '../images/dino.svg'
+import asteroidImage from '../images/asteroid.svg'
+
 const Asteroid = ({ data }) => {
     const asteroidName = data.name
     const asteroidHazardous = data.is_potentially_hazardous_asteroid
@@ -8,12 +11,15 @@ const Asteroid = ({ data }) => {
     const asteroidDistanceKm = data.close_approach_data[0].miss_distance.kilometers
     const asteroidDistanceLn = data.close_approach_data[0].miss_distance.lunar
     const asteroidDiameter = data.estimated_diameter.meters.estimated_diameter_min
+
+    const asteroidId = data.id
   
     return (
       <div className={asteroidHazardous ? 'asteroid asteroid__hazardous' : 'asteroid asteroid__unhazardous'}>
-        <div className='dino'>
-          <img src='../images/dino.svg' />
-        </div>
+        
+          <img className='asteroid__dino' src={dino} />
+          <img className='asteroid__asteroid' src={asteroidImage} />
+
         <div className='asteroid__info'>
           <h2 className='asteroid__title'>{asteroidName}</h2>
             <div className='asteroid__digits'>
@@ -23,11 +29,13 @@ const Asteroid = ({ data }) => {
             </div>
             <div className='asteroid__digits'>
               <p className='asteroid__paragraph'>Расстояние</p>
-              <p className='asteroid__paragraph'>{asteroidDistanceKm}</p>
+              <p className='asteroid__points'></p>
+              <p className='asteroid__paragraph'>{Math.floor(asteroidDistanceKm).toLocaleString('ru-RU')} км</p>
             </div>
             <div className='asteroid__digits'>
               <p className='asteroid__paragraph'>Размер</p>
-              <p className='asteroid__paragraph'>{asteroidDiameter}</p>
+              <p className='asteroid__points'></p>
+              <p className='asteroid__paragraph'>{Math.floor(asteroidDiameter).toLocaleString('ru-RU')} м</p>
             </div>
         </div>
         <div className='asteroid__save-world'>
