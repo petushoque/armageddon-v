@@ -6,6 +6,8 @@ import Menu from './Menu'
 import List from './List';
 import withListLoading from './withListLoading';
 
+import { today, tomorrowDate } from './Date'
+
 function MainContent() {
   const ListLoading = withListLoading(List);
   const [appState, setAppState] = useState({
@@ -15,7 +17,7 @@ function MainContent() {
 
   useEffect(() => {
     setAppState({ loading: true });
-    const apiUrl = `https://api.nasa.gov/neo/rest/v1/feed?start_date=2021-04-09&end_date=2021-04-10&api_key=DEMO_KEY`;
+    const apiUrl = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${today}&end_date=${tomorrowDate}&api_key=DEMO_KEY`;
     fetch(apiUrl)
       .then((res) => res.json())
       .then((repos) => {
@@ -34,6 +36,4 @@ function MainContent() {
 
 export default MainContent
 
-// <AsteroidsList /> - вставить после меню  near_earth_objects["2021-04-08"]
-//https://api.nasa.gov/neo/rest/v1/feed?start_date=2021-04-08&end_date=2021-04-10&api_key=DEMO_KEY
-//https://api.github.com/users/hacktivist123/repos
+//const apiUrl = `https://api.nasa.gov/neo/rest/v1/feed?start_date=2021-04-09&end_date=2021-04-10&api_key=DEMO_KEY`;
