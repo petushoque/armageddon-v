@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './MainContent.css'
 
-import Menu from './Menu'
-
 import List from './List';
 import withListLoading from './withListLoading';
 
@@ -21,12 +19,11 @@ function MainContent() {
     fetch(apiUrl)
       .then((res) => res.json())
       .then((repos) => {
-        setAppState({ loading: false, repos: repos.near_earth_objects['2021-04-09']});
+        setAppState({ loading: false, repos: repos.near_earth_objects[`${today}`]});
       });
   }, [setAppState]);
   return (
     <div className='main-content'>
-      <Menu />
       <div className='repo-container'>
         <ListLoading isLoading={appState.loading} repos={appState.repos} />
       </div>
@@ -37,3 +34,4 @@ function MainContent() {
 export default MainContent
 
 //const apiUrl = `https://api.nasa.gov/neo/rest/v1/feed?start_date=2021-04-09&end_date=2021-04-10&api_key=DEMO_KEY`;
+//        setAppState({ loading: false, repos: repos.near_earth_objects['2021-04-09']});

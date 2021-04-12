@@ -1,0 +1,23 @@
+.menu {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu__distance {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/*input[type=radio] {
+        display: none;
+}
+*/
+input[type=radio]:checked + label {
+    color: red
+}
