@@ -2,6 +2,7 @@
     width: 100%;
     max-width: 920px;
     margin: 0 auto;
+    font-family: Helvetica;
 
     display:flex;
     flex-direction: row;
@@ -14,10 +15,16 @@
     align-items: center;
 }
 
-/*input[type=radio] {
+.menu__distance-radio {
         display: none;
 }
-*/
-input[type=radio]:checked + label {
-    color: red
+
+.menu__distance-label {
+    text-decoration: underline;
+    margin-left: 5px;
+}
+
+.menu__distance-radio:checked + .menu__distance-label {
+    font-weight: bold;
+    text-decoration: none;
 }

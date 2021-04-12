@@ -22,16 +22,14 @@ function MainContent() {
         setAppState({ loading: false, repos: repos.near_earth_objects[`${today}`]});
       });
   }, [setAppState]);
+
   return (
     <div className='main-content'>
       <div className='repo-container'>
-        <ListLoading isLoading={appState.loading} repos={appState.repos} />
+        <ListLoading isLoading={appState.loading} repos={appState.repos}/>
       </div>
     </div>
   );
 }
 
 export default MainContent
-
-//const apiUrl = `https://api.nasa.gov/neo/rest/v1/feed?start_date=2021-04-09&end_date=2021-04-10&api_key=DEMO_KEY`;
-//        setAppState({ loading: false, repos: repos.near_earth_objects['2021-04-09']});

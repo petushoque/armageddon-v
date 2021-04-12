@@ -4,7 +4,7 @@ import './Asteroid.css'
 import dino from '../images/dino.svg'
 import asteroidImage from '../images/asteroid.svg'
 
-const Asteroid = ({ data }) => {
+const Asteroid = ({ data } ) => {
     const asteroidName = data.name
     const asteroidHazardous = data.is_potentially_hazardous_asteroid
     const asteroidDate = data.close_approach_data[0].close_approach_date_full
@@ -13,10 +13,11 @@ const Asteroid = ({ data }) => {
     const asteroidDiameter = data.estimated_diameter.meters.estimated_diameter_min
 
     const asteroidId = data.id
+    
   
     return (
       <div className={asteroidHazardous ? 'asteroid asteroid__hazardous' : 'asteroid asteroid__unhazardous'}>
-        
+
           <img className='asteroid__dino' src={dino} />
           <img className='asteroid__asteroid' src={asteroidImage} />
 
@@ -30,7 +31,8 @@ const Asteroid = ({ data }) => {
             <div className='asteroid__digits'>
               <p className='asteroid__paragraph'>Расстояние</p>
               <p className='asteroid__points'></p>
-              <p className='asteroid__paragraph'>{Math.floor(asteroidDistanceKm).toLocaleString('ru-RU')} км</p>
+              <p className='asteroid__paragraph asteroid__distance_km'>{Math.floor(asteroidDistanceKm).toLocaleString('ru-RU')} км</p>
+              <p className='asteroid__paragraph asteroid__distance_ln'>{Math.floor(asteroidDistanceLn).toLocaleString('ru-RU')} лун</p>
             </div>
             <div className='asteroid__digits'>
               <p className='asteroid__paragraph'>Размер</p>
@@ -48,35 +50,3 @@ const Asteroid = ({ data }) => {
   };
 
 export default Asteroid;
-
-/*
-
-repo.is_potentially_hazardous_asteroid ? 'yes' : 'no'
-
-const ShopListItem = ({ phone }) => {
-  const { name, description, price, url } = phone
-
-  return (
-    <div className="shop-list-item">
-      <div className="shop-list-item__header">
-        <div className="shop-list-item__image">
-          <img src={url} alt="Картинка телефона" className="shop-list-item__url" />
-        </div>
-        <h3 className="shop-list-item__name">{name}</h3>
-      </div>
-      <div className="shop-list-item__content">
-        <p className="shop-list-item__description">{description}</p>
-        <span className="shop-list-item__price">Цена: {price}</span>
-      </div>
-      <button className="button">Купить</button>
-    </div>
-  )
-};
-
-
-<div className="shop-list-item__image">
-            <img src={asteroidName} alt="Картинка телефона" className="shop-list-item__url" />
-          </div>
-          <h3 className="shop-list-item__name">{asteroidName}</h3>
-
-*/
