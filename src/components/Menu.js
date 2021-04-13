@@ -33,20 +33,20 @@ function Menu (props) {
                     console.log(radioInput[0].value)
                     console.log(kmDistance)
                     for (let i = 0; i < lnDistance.length; i++) {
-                        lnDistance[i].classList.remove('asteroid__distance_hyde');
+                        lnDistance[i].classList.add('asteroid__distance_hyde');
                       }
                     for (let i = 0; i < kmDistance.length; i++) {
-                        kmDistance[i].classList.add('asteroid__distance_hyde');
+                        kmDistance[i].classList.remove('asteroid__distance_hyde');
                     }
                 }
                 if (radioInput[1].checked === true) {
                     console.log(radioInput[1].value)
                     console.log(lnDistance)
                     for (let i = 0; i < lnDistance.length; i++) {
-                        lnDistance[i].classList.add('asteroid__distance_hyde');
+                        lnDistance[i].classList.remove('asteroid__distance_hyde');
                       }
                     for (let i = 0; i < kmDistance.length; i++) {
-                        kmDistance[i].classList.remove('asteroid__distance_hyde');
+                        kmDistance[i].classList.add('asteroid__distance_hyde');
                     }
                 }
         }

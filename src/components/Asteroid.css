@@ -14,14 +14,6 @@
     position: relative;
 }
 
-.asteroid_hyde {
-    display: none;
-}
-
-.asteroid__distance_hyde {
-    display: none;
-}
-
 .asteroid__hazardous {
     background: linear-gradient(90deg, #FFB199 0%, #FF0844 100%);
 }
@@ -111,4 +103,12 @@
     position: absolute;
     bottom: 90px;
     left: 50px;
+}
+
+.asteroid_hyde {
+    display: none;
+}
+
+.asteroid__distance_hyde {
+    display: none;
 }

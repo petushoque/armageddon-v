@@ -32,7 +32,7 @@ const Asteroid = ({ data } ) => {
               <p className='asteroid__paragraph'>Расстояние</p>
               <p className='asteroid__points'></p>
               <p className='asteroid__paragraph asteroid__distance_km'>{Math.floor(asteroidDistanceKm).toLocaleString('ru-RU')} км</p>
-              <p className='asteroid__paragraph asteroid__distance_ln'>{Math.floor(asteroidDistanceLn).toLocaleString('ru-RU')} лун</p>
+              <p className='asteroid__paragraph asteroid__distance_ln'>{Math.floor(asteroidDistanceLn).toLocaleString('ru-RU')} расстояний до луны</p>
             </div>
             <div className='asteroid__digits'>
               <p className='asteroid__paragraph'>Размер</p>
