@@ -20,7 +20,6 @@ function MainContent() {
     fetch(apiUrl)
       .then((res) => res.json())
       .then((repos) => {
-        console.log(repos)
         setAppState({ loading: false, repos: repos.near_earth_objects[`${today}`]});
       });
   }, [setAppState]);
@@ -34,13 +33,17 @@ function MainContent() {
       name: asteroid.target.attributes.name,
       date: asteroid.target.attributes.date,
       hazardous: asteroid.target.attributes.hazardous,
-      distanceKm: asteroid.target.attributes.distanceKm,
-      distanceLn: asteroid.target.attributes.distanceLn,
+      distancekm: asteroid.target.attributes.distancekm,
+      distancekn: asteroid.target.attributes.distanceln,
       diameter: asteroid.target.attributes.diameter,
       velocity: asteroid.target.attributes.velocity,
       orbiting: asteroid.target.attributes.orbiting,
       magnitude: asteroid.target.attributes.magnitude
      } )
+  }
+
+  function closePopup () {
+    setSelectedAsteroid(null)
   }
 
   return (
@@ -50,7 +53,7 @@ function MainContent() {
         <ListLoading isLoading={appState.loading} repos={appState.repos} onAsteroidClick={handleAsteroidClick}/>
       </div>
     </div>
-    <AsteroidPopup asteroid={selectedAsteroid}/>
+    <AsteroidPopup asteroid={selectedAsteroid} onClose={closePopup}/>
     </>
   );
 }

@@ -1,27 +1,83 @@
 .asteroid-popup {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.9);
-        justify-content: center;
-        align-items: center;
-    /* Механизм плавного открытия попапа */
-        overflow: hidden;
-        height: 0;
-        opacity: 0;
-        transition: height 0ms 400ms, opacity 400ms 0ms;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: height 0ms 400ms, opacity 400ms 0ms;
 }
 
 .asteroid-popup_active {
     display: flex;
-/* Механизм плавного открытия попапа */
     height: auto;
     opacity: 1;
     transition: height 0ms 0ms, opacity 600ms 0ms;
 }
 
-.test {
-    font-size: 40px;
+.asteroid-popup__container {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 40px 40px 40px 40px;
+    width: 430px;
+    position: relative;
 }
+
+.asteroid-popup__close-button {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-image: url(../images/close-popup.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: 40px 40px;
+    width: 40px;
+    height: 40px;
+    border: none;    
+}
+
+.asteroid-popup__close-button:hover {
+    opacity: 0.6;
+}
+
+.asteroid-popup__comet {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba(219, 174, 9, 0.4);
+      box-shadow: 0 0 0 0 rgba(219, 174, 9, 0.4);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 10px rgba(214, 123, 38, 0);
+        box-shadow: 0 0 0 10px rgba(214, 123, 38, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+        box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    }
+  }
+
+  .asteroid-popup__info {
+      width: 100%;
+  }
+
+  .asteroid-popup__data {
+      text-align: right;
+  }

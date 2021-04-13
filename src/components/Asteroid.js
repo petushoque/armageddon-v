@@ -32,8 +32,8 @@ const Asteroid = (props ) => {
                   name={asteroidName}
                   date={asteroidDate}
                   hazardous={asteroidHazardous.toString()}
-                  distanceKm={asteroidDistanceKm}
-                  distanceLn={asteroidDistanceLn}
+                  distancekm={asteroidDistanceKm}
+                  distanceln={asteroidDistanceLn}
                   diameter={asteroidDiameter}
                   velocity={asteroidVelocity}
                   orbiting={asteroidOrbiting}

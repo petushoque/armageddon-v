@@ -1,22 +1,44 @@
 import './AsteroidPopup.css'
+import comet from '../images/comet.png'
 
 function AsteroidPopup (props) {
     const asteroid = props.asteroid;
     return(
         <div className={asteroid ? `asteroid-popup asteroid-popup_active` : `asteroid-popup`}>
-            <div>
-                    <h1 className="test">HELLO</h1>
-                    <p>{console.log(props.asteroid.id)}</p>
+            <div className='asteroid-popup__container'>
+                <img src={comet} className='asteroid-popup__comet'/>
+                <h2 className="test">{asteroid ? asteroid.name.value : ''}</h2>
+                    <table className='asteroid-popup__info'>
+                        <tr>
+                            <td className='asteroid-popup__description'>Дата максимального сближения</td>
+                            <td className='asteroid-popup__data'>{asteroid ? asteroid.date.value : ''}</td>
+                        </tr>
+                        <tr>
+                            <td className='asteroid-popup__description'>Ближайшее расстояние до Земли</td>
+                            <td className='asteroid-popup__data'>{asteroid ? Math.floor(asteroid.distancekm.value).toLocaleString('ru-RU') : ''} км</td>
+                        </tr>
+                        <tr>
+                            <td className='asteroid-popup__description'>Диаметр астероида</td>
+                            <td className='asteroid-popup__data'>{asteroid ? Math.floor(asteroid.diameter.value) : ''} м</td>
+                        </tr>
+                        <tr>
+                            <td className='asteroid-popup__description'>Скорость сближения с Землей</td>
+                            <td className='asteroid-popup__data'>{asteroid ? asteroid.velocity.value : ''} км/с</td>
+                        </tr>
+                        <tr>
+                            <td className='asteroid-popup__description'>Орбитальное тело</td>
+                            <td className='asteroid-popup__data'>{asteroid ? asteroid.orbiting.value : ''}</td>
+                        </tr>
+                        <tr>
+                            <td className='asteroid-popup__description'>Магнитуда</td>
+                            <td className='asteroid-popup__data'>{asteroid ? asteroid.magnitude.value : ''}</td>
+                        </tr>
+                    </table>
+                <button className='asteroid-popup__close-button' onClick={props.onClose} type='button' />
             </div>
+            
         </div>
     )
 }
 
 export default AsteroidPopup
-
-/*
-console.log(asteroid.target.attributes.name, asteroid.target.attributes.date, asteroid.target.attributes.hazardous,
-    asteroid.target.attributes.distanceKm, asteroid.target.attributes.distanceLn, asteroid.target.attributes.diameter,
-    asteroid.target.attributes.velocity, asteroid.target.attributes.orbiting, asteroid.target.attributes.magnitude)
-    console.log(selectedAsteroid)
-*/
