@@ -1,12 +1,12 @@
 import './AsteroidPopup.css'
 
 function AsteroidPopup (props) {
-    const closePopup = props.onClose;
-    const card = props.card;
+    const asteroid = props.asteroid;
     return(
-        <div className={`asteroid-popup `}>
-            <div className="popup__image-container">
+        <div className={asteroid ? `asteroid-popup asteroid-popup_active` : `asteroid-popup`}>
+            <div>
                     <h1 className="test">HELLO</h1>
+                    <p>{console.log(props.asteroid.id)}</p>
             </div>
         </div>
     )
@@ -14,4 +14,9 @@ function AsteroidPopup (props) {
 
 export default AsteroidPopup
 
-//asteroid-popup_active
+/*
+console.log(asteroid.target.attributes.name, asteroid.target.attributes.date, asteroid.target.attributes.hazardous,
+    asteroid.target.attributes.distanceKm, asteroid.target.attributes.distanceLn, asteroid.target.attributes.diameter,
+    asteroid.target.attributes.velocity, asteroid.target.attributes.orbiting, asteroid.target.attributes.magnitude)
+    console.log(selectedAsteroid)
+*/

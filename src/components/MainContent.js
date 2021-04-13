@@ -28,12 +28,19 @@ function MainContent() {
   const [selectedAsteroid, setSelectedAsteroid] = useState(null)
 
   function handleAsteroidClick (asteroid) {
-    console.log(asteroid.target.attributes.id)
-    console.log(asteroid.target.attributes.name, asteroid.target.attributes.date, asteroid.target.attributes.hazardous,
-      asteroid.target.attributes.distanceKm, asteroid.target.attributes.distanceLn, asteroid.target.attributes.diameter,
-      asteroid.target.attributes.velocity, asteroid.target.attributes.orbiting, asteroid.target.attributes.magnitude)
-
-    setSelectedAsteroid(asteroid)
+    
+    setSelectedAsteroid( {
+      id: asteroid.target.attributes.id, 
+      name: asteroid.target.attributes.name,
+      date: asteroid.target.attributes.date,
+      hazardous: asteroid.target.attributes.hazardous,
+      distanceKm: asteroid.target.attributes.distanceKm,
+      distanceLn: asteroid.target.attributes.distanceLn,
+      diameter: asteroid.target.attributes.diameter,
+      velocity: asteroid.target.attributes.velocity,
+      orbiting: asteroid.target.attributes.orbiting,
+      magnitude: asteroid.target.attributes.magnitude
+     } )
   }
 
   return (
@@ -43,7 +50,7 @@ function MainContent() {
         <ListLoading isLoading={appState.loading} repos={appState.repos} onAsteroidClick={handleAsteroidClick}/>
       </div>
     </div>
-    <AsteroidPopup card={selectedAsteroid}/>
+    <AsteroidPopup asteroid={selectedAsteroid}/>
     </>
   );
 }
@@ -51,3 +58,10 @@ function MainContent() {
 export default MainContent
 
 //<AsteroidPopup asteroid={selectedAsteroid} onClose={closePopup}/>
+/*
+console.log(asteroid.target.attributes.id)
+    console.log(asteroid.target.attributes.name, asteroid.target.attributes.date, asteroid.target.attributes.hazardous,
+      asteroid.target.attributes.distanceKm, asteroid.target.attributes.distanceLn, asteroid.target.attributes.diameter,
+      asteroid.target.attributes.velocity, asteroid.target.attributes.orbiting, asteroid.target.attributes.magnitude)
+
+*/
