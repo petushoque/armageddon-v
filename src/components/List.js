@@ -12,7 +12,7 @@ const List = (props) => {
         {repos.map((repo) => {
           return (
             <li key={repo.id} className=''>
-              <Asteroid data={repo}/>              
+              <Asteroid data={repo} onAsteroidClick={props.onAsteroidClick}/>              
             </li>
           );
         })}

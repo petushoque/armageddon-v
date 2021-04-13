@@ -4,15 +4,20 @@ import './Asteroid.css'
 import dino from '../images/dino.svg'
 import asteroidImage from '../images/asteroid.svg'
 
-const Asteroid = ({ data } ) => {
-    const asteroidName = data.name
-    const asteroidHazardous = data.is_potentially_hazardous_asteroid
-    const asteroidDate = data.close_approach_data[0].close_approach_date_full
-    const asteroidDistanceKm = data.close_approach_data[0].miss_distance.kilometers
-    const asteroidDistanceLn = data.close_approach_data[0].miss_distance.lunar
-    const asteroidDiameter = data.estimated_diameter.meters.estimated_diameter_min
+const Asteroid = (props ) => {
+    const asteroidName = props.data.name
+    const asteroidHazardous = props.data.is_potentially_hazardous_asteroid
+    const asteroidDate = props.data.close_approach_data[0].close_approach_date_full
+    const asteroidDistanceKm = props.data.close_approach_data[0].miss_distance.kilometers
+    const asteroidDistanceLn = props.data.close_approach_data[0].miss_distance.lunar
+    const asteroidDiameter = props.data.estimated_diameter.meters.estimated_diameter_min
 
-    const asteroidId = data.id
+    const asteroidId = props.data.id
+    const asteroidVelocity = props.data.close_approach_data[0].relative_velocity.kilometers_per_second;
+    const asteroidOrbiting = props.data.close_approach_data[0].orbiting_body
+    const asteroidMagnitude = props.data.absolute_magnitude_h
+
+    function setAsteroid (asteroid) {props.onAsteroidClick(asteroid) }
     
   
     return (
@@ -22,7 +27,17 @@ const Asteroid = ({ data } ) => {
           <img className='asteroid__asteroid' src={asteroidImage} />
 
         <div className='asteroid__info'>
-          <h2 className='asteroid__title'>{asteroidName}</h2>
+          <h2 onClick={setAsteroid} className='asteroid__title' 
+                  id={asteroidId} 
+                  name={asteroidName}
+                  date={asteroidDate}
+                  hazardous={asteroidHazardous.toString()}
+                  distanceKm={asteroidDistanceKm}
+                  distanceLn={asteroidDistanceLn}
+                  diameter={asteroidDiameter}
+                  velocity={asteroidVelocity}
+                  orbiting={asteroidOrbiting}
+                  magnitude={asteroidMagnitude}>{asteroidName}</h2>
             <div className='asteroid__digits'>
               <p className='asteroid__paragraph'>Дата</p>
               <p className='asteroid__points'></p>
@@ -32,7 +47,7 @@ const Asteroid = ({ data } ) => {
               <p className='asteroid__paragraph'>Расстояние</p>
               <p className='asteroid__points'></p>
               <p className='asteroid__paragraph asteroid__distance_km'>{Math.floor(asteroidDistanceKm).toLocaleString('ru-RU')} км</p>
-              <p className='asteroid__paragraph asteroid__distance_ln'>{Math.floor(asteroidDistanceLn).toLocaleString('ru-RU')} расстояний до луны</p>
+              <p className='asteroid__paragraph asteroid__distance_ln asteroid__distance_hyde'>{Math.floor(asteroidDistanceLn).toLocaleString('ru-RU')} расстояний до луны</p>
             </div>
             <div className='asteroid__digits'>
               <p className='asteroid__paragraph'>Размер</p>
@@ -50,3 +65,6 @@ const Asteroid = ({ data } ) => {
   };
 
 export default Asteroid;
+
+
+//const Asteroid = ({ data }, {onAsteroidClick} ) => {

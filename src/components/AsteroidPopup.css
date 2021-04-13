@@ -1,0 +1,27 @@
+.asteroid-popup {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+    /* Механизм плавного открытия попапа */
+        overflow: hidden;
+        height: 0;
+        opacity: 0;
+        transition: height 0ms 400ms, opacity 400ms 0ms;
+}
+
+.asteroid-popup_active {
+    display: flex;
+/* Механизм плавного открытия попапа */
+    height: auto;
+    opacity: 1;
+    transition: height 0ms 0ms, opacity 600ms 0ms;
+}
+
+.test {
+    font-size: 40px;
+}

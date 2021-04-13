@@ -3,6 +3,7 @@ import './MainContent.css'
 
 import List from './List';
 import withListLoading from './withListLoading';
+import AsteroidPopup from './AsteroidPopup'
 
 import { today, tomorrowDate } from './Date'
 
@@ -19,17 +20,34 @@ function MainContent() {
     fetch(apiUrl)
       .then((res) => res.json())
       .then((repos) => {
+        console.log(repos)
         setAppState({ loading: false, repos: repos.near_earth_objects[`${today}`]});
       });
   }, [setAppState]);
 
+  const [selectedAsteroid, setSelectedAsteroid] = useState(null)
+
+  function handleAsteroidClick (asteroid) {
+    console.log(asteroid.target.attributes.id)
+    console.log(asteroid.target.attributes.name, asteroid.target.attributes.date, asteroid.target.attributes.hazardous,
+      asteroid.target.attributes.distanceKm, asteroid.target.attributes.distanceLn, asteroid.target.attributes.diameter,
+      asteroid.target.attributes.velocity, asteroid.target.attributes.orbiting, asteroid.target.attributes.magnitude)
+
+    setSelectedAsteroid(asteroid)
+  }
+
   return (
+    <>
     <div className='main-content'>
       <div className='repo-container'>
-        <ListLoading isLoading={appState.loading} repos={appState.repos}/>
+        <ListLoading isLoading={appState.loading} repos={appState.repos} onAsteroidClick={handleAsteroidClick}/>
       </div>
     </div>
+    <AsteroidPopup card={selectedAsteroid}/>
+    </>
   );
 }
 
 export default MainContent
+
+//<AsteroidPopup asteroid={selectedAsteroid} onClose={closePopup}/>
