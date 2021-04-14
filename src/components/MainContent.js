@@ -59,12 +59,3 @@ function MainContent() {
 }
 
 export default MainContent
-
-//<AsteroidPopup asteroid={selectedAsteroid} onClose={closePopup}/>
-/*
-console.log(asteroid.target.attributes.id)
-    console.log(asteroid.target.attributes.name, asteroid.target.attributes.date, asteroid.target.attributes.hazardous,
-      asteroid.target.attributes.distanceKm, asteroid.target.attributes.distanceLn, asteroid.target.attributes.diameter,
-      asteroid.target.attributes.velocity, asteroid.target.attributes.orbiting, asteroid.target.attributes.magnitude)
-
-*/

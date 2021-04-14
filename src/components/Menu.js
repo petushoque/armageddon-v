@@ -29,9 +29,6 @@ function Menu (props) {
         for (var i = 0; i < radioInput.length; i++)
             {
                 if (radioInput[0].checked === true) {
-
-                    console.log(radioInput[0].value)
-                    console.log(kmDistance)
                     for (let i = 0; i < lnDistance.length; i++) {
                         lnDistance[i].classList.add('asteroid__distance_hyde');
                       }
@@ -40,8 +37,6 @@ function Menu (props) {
                     }
                 }
                 if (radioInput[1].checked === true) {
-                    console.log(radioInput[1].value)
-                    console.log(lnDistance)
                     for (let i = 0; i < lnDistance.length; i++) {
                         lnDistance[i].classList.remove('asteroid__distance_hyde');
                       }

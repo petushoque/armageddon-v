@@ -112,3 +112,38 @@
 .asteroid__distance_hyde {
     display: none;
 }
+
+@media screen and (max-width: 919px) {
+    .asteroid {
+        flex-direction: column;
+        max-height: 600px;
+        /*ВЫСОТА ДОЛЖНА БЫТЬ ЗНАЧИТЕЛЬНО МЕНЬШЕ*/
+        margin: 0 16px 16px;
+    }
+    .asteroid__title {
+        position: absolute;
+        top: 105px;
+        margin: 0;
+    }
+    .asteroid__info {
+        padding-left: 16px;
+        padding-right: 16px;
+        margin-top: 145px;
+        width: 100%;
+        box-sizing: border-box;
+        /*width: 255px;*/
+        background-color: white;
+    }
+    .asteroid__dino {
+        width: 35px;
+        height: 30px;
+        top: 115px;
+        bottom: auto;
+        left: auto;
+        right: 8px;
+        transform: scale(-1, 1)
+    }
+    .asteroid__save-world {
+        background-color: white;
+    }
+}
