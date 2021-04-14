@@ -3,10 +3,71 @@
     max-width: 920px;
     margin: 0 auto;
     display: none;
+    font-family: Helvetica;
     flex-direction: column;
     align-items: center;
 }
 
 .save-world_active {
     display: flex;
+}
+
+.save-world__title {
+    width: 100%;
+    text-align: center;
+}
+
+.save-world__description {
+    margin: 5px 0 0;
+    padding: 0;
+    width: 280px;
+    text-align: center;
+}
+
+.save-world__item {
+    text-align: center;
+}
+
+.save-world__show-list-button{
+    margin-bottom: 20px;
+    color:black;
+    padding: 10px 20px;
+    width:250px;
+    text-decoration:none;
+    text-align:center;    
+    display: block;
+    background-image: linear-gradient(to left,transparent,transparent 50%,#0f3000 50%,#274e48);
+    background-position: 100% 0;
+    background-size: 200% 100%;
+    transition: all .25s ease-in;
+    font: 400 18px tahoma;
+    border: 1px solid black;
+    border-radius: 25px;
+   }
+
+.save-world__show-list-button:hover {
+   background-position: 0 0;
+   color:#fff;
+}
+
+.save-world__destroy-button{
+    margin-top: 20px;
+    color:black;
+    padding: 10px 20px;
+    width:250px;
+    text-decoration:none;
+    text-align:center;
+    display: block;
+    background-image: linear-gradient(to left,transparent,transparent 50%,#ff3300 50%,#ff7b00);
+    background-position: 100% 0;
+    background-size: 200% 100%;
+    transition: all .25s ease-in;
+    font: 400 18px tahoma;
+    border: 1px solid black;
+    border-radius: 25px;
+   }
+
+.save-world__destroy-button:hover {
+   background-position: 0 0;
+   color:#fff;
 }
