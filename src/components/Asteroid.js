@@ -23,8 +23,8 @@ const Asteroid = (props ) => {
     return (
       <div className={asteroidHazardous ? 'asteroid asteroid__hazardous' : 'asteroid asteroid__unhazardous'}>
 
-          <img className='asteroid__dino' src={dino} />
-          <img className='asteroid__asteroid' src={asteroidImage} />
+          <img className='asteroid__dino' src={dino} alt='Маленький динозавр'/>
+          <img className='asteroid__asteroid' src={asteroidImage} alt='Большой астероид'/>
 
         <div className='asteroid__info'>
           <h2 onClick={setAsteroid} className='asteroid__title' 

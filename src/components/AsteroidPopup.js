@@ -6,9 +6,10 @@ function AsteroidPopup (props) {
     return(
         <div className={asteroid ? `asteroid-popup asteroid-popup_active` : `asteroid-popup`}>
             <div className='asteroid-popup__container'>
-                <img src={comet} className='asteroid-popup__comet'/>
+                <img src={comet} alt='Эмоджи символ с каметой' className='asteroid-popup__comet'/>
                 <h2 className="test">{asteroid ? asteroid.name.value : ''}</h2>
                     <table className='asteroid-popup__info'>
+                        <tbody>
                         <tr>
                             <td className='asteroid-popup__description'>Дата максимального сближения</td>
                             <td className='asteroid-popup__data'>{asteroid ? asteroid.date.value : ''}</td>
@@ -33,8 +34,9 @@ function AsteroidPopup (props) {
                             <td className='asteroid-popup__description'>Магнитуда</td>
                             <td className='asteroid-popup__data'>{asteroid ? asteroid.magnitude.value : ''}</td>
                         </tr>
+                    </tbody>
                     </table>
-                <button className='asteroid-popup__close-button' onClick={props.onClose} type='button' />
+                <button alt='Крестик' className='asteroid-popup__close-button' onClick={props.onClose} type='button' />
             </div>
             
         </div>

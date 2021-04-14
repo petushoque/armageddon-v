@@ -7,7 +7,7 @@ function WithListLoading(Component) {
       return (
         <p style={{ textAlign: 'center', fontSize: '30px' }}>
           Нужно немного подождать
-          <img src={earth} />
+          <img src={earth} alt='Изображение крутящейся Земли'/>
         </p>
       );
     };

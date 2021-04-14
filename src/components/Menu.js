@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import './Menu.css'
 
 
 
-function Menu (props) {
+function Menu () {
 
     function chechCheckbox () {
         const checkbox = document.getElementById('hazardousCheckbox')
@@ -19,8 +19,6 @@ function Menu (props) {
               }
         }
     }
-
-//РАБОТАЕТ НЕВЕРНО
 
     function checkRadiobox () {
         const radioInput = document.querySelectorAll('.menu__distance-radio');
@@ -49,17 +47,17 @@ function Menu (props) {
 
     return (
         <div className='menu'>
-            <p><input className="menu__hazardous-checkbox" type="checkbox" name="hazardousCheckbox" id="hazardousCheckbox" value="true" onClick={chechCheckbox}/>
-            <label for="hazardousCheckbox">Показать только опасные</label></p>
+            <p className='menu__paragraph'><input className="menu__hazardous-checkbox" type="checkbox" name="hazardousCheckbox" id="hazardousCheckbox" value="true" onClick={chechCheckbox}/>
+            <label htmlFor="hazardousCheckbox">Показать только опасные</label></p>
             <div className='menu__distance'>
-                    <p>Расстояние </p> 
+                    <p className='menu__paragraph'>Расстояние  
                     <input className="menu__distance-radio" type="radio" name="distance" id="km" value="km" onClick={checkRadiobox} defaultChecked/>
-                    <label className="menu__distance-label" for="km">в километрах</label>
-                    <p>,</p> 
+                    <label className="menu__distance-label" htmlFor="km">в километрах</label>
+                    , 
                     <input className="menu__distance-radio" type="radio" name="distance" id="ln" value="ln" onClick={checkRadiobox} />
-                    <label className="menu__distance-label" for="ln">в дистанциях до луны</label>                    
+                    <label className="menu__distance-label" htmlFor="ln">в дистанциях до луны</label>                    
+                    </p>
             </div>
-            {console.log(props.unit)}
         </div>
     )
     
