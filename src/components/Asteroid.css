@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
+    overflow: hidden;
     position: relative;
 }
 
@@ -29,12 +29,14 @@
     width: 289px;
 
     padding-left: 347px;
+    z-index: 2;
 }
 
 .asteroid__digits {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    z-index: 2;
 }
 
 .asteroid__points {
@@ -43,6 +45,7 @@
     border-bottom: 1px dashed #000000;
 
     flex-grow: 1;
+    z-index: 2;
 }
 
 .asteroid__title {
@@ -55,6 +58,7 @@
     padding: 0;
     margin: 0 0 16px 0;
     cursor: pointer;
+    z-index: 2;
 }
 
 .asteroid__paragraph {
@@ -74,6 +78,7 @@
     flex-direction: column;
     align-items: center;
     padding: 40px 24px 56px 0;
+    z-index: 2;
 }
 
 .asteroid__button {
@@ -102,8 +107,9 @@
 
 .asteroid__asteroid {
     position: absolute;
-    bottom: 90px;
+    bottom: 81px;
     left: 50px;
+    z-index: 0;
 }
 
 .asteroid_hyde {

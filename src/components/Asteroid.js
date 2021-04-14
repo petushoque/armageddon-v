@@ -20,12 +20,12 @@ const Asteroid = (props ) => {
     function setAsteroid (asteroid) {props.onAsteroidClick(asteroid) }
     
     function addToDestroyList (asteroid) {props.onButtonClick(asteroid)}
-  
+
     return (
       <div className={asteroidHazardous ? 'asteroid asteroid__hazardous' : 'asteroid asteroid__unhazardous'}>
 
           <img className='asteroid__dino' src={dino} alt='Маленький динозавр'/>
-          <img className='asteroid__asteroid' src={asteroidImage} alt='Большой астероид'/>
+          <img className='asteroid__asteroid' src={asteroidImage} alt='Большой астероид' style={{minHeight: `${Math.floor(asteroidDiameter/1.5).toString()}px`}}/>
 
         <div className='asteroid__info'>
           <h2 onClick={setAsteroid} className='asteroid__title' 
@@ -67,5 +67,5 @@ const Asteroid = (props ) => {
 
 export default Asteroid;
 
-
+//{{ width: `${asteroidDiameter} px` }}
 //const Asteroid = ({ data }, {onAsteroidClick} ) => {

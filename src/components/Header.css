@@ -49,6 +49,8 @@
     display: flex;
     flex-direction:row;
     margin-top: 16px;
+
+    height: fit-content;
 }
 
 .header__radio {
@@ -58,6 +60,7 @@
 .header__radio-label {
 text-decoration: underline;
 margin-left: 5px;
+cursor: pointer
 }
 
 .header__radio:checked + .header__radio-label {

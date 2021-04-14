@@ -3,7 +3,7 @@ import './SaveWorld.css'
 
 function SaveWorld (props) {
 
-    function test () {console.log(props.destroyList)
+    function test () {
 
         let oldElements = document.querySelectorAll('.save-world__item');
         for( let i = 0; i < oldElements.length; i++ ){
@@ -50,30 +50,3 @@ function SaveWorld (props) {
 }
 
 export default SaveWorld
-
-/*
-
-
-                <ul className='123'>
-                    {props.destroyList.forEach((asteroid, i) => {
-                        return (
-                            <li key={i} className=''>
-                            <p>Hello</p>              
-                            </li>
-                        );
-                    })}
-                </ul>
-
-key={asteroid.id}
-
-<ul className='asteroid-list'>
-        {repos.map((repo) => {
-          return (
-            <li key={repo.id} className=''>
-              <Asteroid data={repo} onAsteroidClick={props.onAsteroidClick} onButtonClick={props.onButtonClick}/>              
-            </li>
-          );
-        })}
-      </ul>
-
-*/
