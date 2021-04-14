@@ -46,7 +46,7 @@ function MainContent() {
     setSelectedAsteroid(null)
   }
 
-  const [destroyList, setDestroyList] = useState()
+  const [destroyList, setDestroyList] = useState([])
 
   function addToDestroyList (asteroid) {
     //если в списке на уничтожение нет астероидов, добавляем выбранный первым

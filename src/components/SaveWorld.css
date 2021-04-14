@@ -3,6 +3,8 @@
     max-width: 920px;
     margin: 0 auto;
     display: none;
+    flex-direction: column;
+    align-items: center;
 }
 
 .save-world_active {
