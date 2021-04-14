@@ -146,4 +146,9 @@
     .asteroid__save-world {
         background-color: white;
     }
+    .asteroid__asteroid {
+        bottom: auto;
+        top: 22px;
+        left: 32px;
+    }
 }

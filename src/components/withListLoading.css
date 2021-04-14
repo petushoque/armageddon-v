@@ -1,0 +1,8 @@
+.earth {
+    width: 100%;
+    object-fit: cover;
+}
+
+.text {
+    max-width: 100%;
+}

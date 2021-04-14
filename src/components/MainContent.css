@@ -1,10 +1,15 @@
 .main-content {
-    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding: 0;
     width: 100%;
     max-width: 920px;
     margin: 0 auto;
-    font-family: Helvetica;
+    font-family: Helvetica;    
+    display: none;
 }
+
+.main-content_active {
+    display: flex;
+}
+

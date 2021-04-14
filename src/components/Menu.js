@@ -46,7 +46,7 @@ function Menu () {
     }
 
     return (
-        <div className='menu'>
+        <div className='menu menu_active'>
             <p className='menu__paragraph'><input className="menu__hazardous-checkbox" type="checkbox" name="hazardousCheckbox" id="hazardousCheckbox" value="true" onClick={chechCheckbox}/>
             <label htmlFor="hazardousCheckbox">Показать только опасные</label></p>
             <div className='menu__distance'>

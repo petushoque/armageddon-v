@@ -1,0 +1,10 @@
+.save-world {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+    display: none;
+}
+
+.save-world_active {
+    display: flex;
+}

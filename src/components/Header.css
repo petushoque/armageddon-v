@@ -48,7 +48,23 @@
 .header__nav {
     display: flex;
     flex-direction:row;
+    margin-top: 16px;
 }
+
+.header__radio {
+    display: none;
+}
+
+.header__radio-label {
+text-decoration: underline;
+margin-left: 5px;
+}
+
+.header__radio:checked + .header__radio-label {
+font-weight: bold;
+text-decoration: none;
+}
+
 
 @media screen and (max-width: 919px) {
     .header {
@@ -57,5 +73,8 @@
     }
     .header__title {
         font-size: 24px;
+    }
+    .header__nav {
+        margin-top: 19px;
     }
 }

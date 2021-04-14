@@ -4,6 +4,7 @@ import './MainContent.css'
 import List from './List';
 import withListLoading from './withListLoading';
 import AsteroidPopup from './AsteroidPopup'
+import SaveWorld from './SaveWorld'
 
 import { today, tomorrowDate } from './Date'
 
@@ -26,8 +27,7 @@ function MainContent() {
 
   const [selectedAsteroid, setSelectedAsteroid] = useState(null)
 
-  function handleAsteroidClick (asteroid) {
-    
+  function handleAsteroidClick (asteroid) {    
     setSelectedAsteroid( {
       id: asteroid.target.attributes.id, 
       name: asteroid.target.attributes.name,
@@ -46,14 +46,21 @@ function MainContent() {
     setSelectedAsteroid(null)
   }
 
+  const [destroyList, setDestroyList] = useState([])
+
+  function addToDestroyList (asteroid) {
+    setDestroyList([...destroyList, asteroid])
+  }
+
   return (
     <>
-    <div className='main-content'>
+    <div className='main-content main-content_active'>
       <div className='repo-container'>
         <ListLoading isLoading={appState.loading} repos={appState.repos} onAsteroidClick={handleAsteroidClick}/>
       </div>
     </div>
     <AsteroidPopup asteroid={selectedAsteroid} onClose={closePopup}/>
+    <SaveWorld />
     </>
   );
 }
