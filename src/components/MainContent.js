@@ -46,21 +46,39 @@ function MainContent() {
     setSelectedAsteroid(null)
   }
 
-  const [destroyList, setDestroyList] = useState([])
+  const [destroyList, setDestroyList] = useState()
 
   function addToDestroyList (asteroid) {
-    setDestroyList([...destroyList, asteroid])
+    //если в списке на уничтожение нет астероидов, добавляем выбранный первым
+    if (destroyList.length === 0) {
+        setDestroyList([asteroid.target.name])
+      }
+    //иначе проверяем нет ли выбранного астероида в списке уже  
+    else {
+        //если есть, возвращаем список, каким был
+        if (destroyList.includes(asteroid.target.name)) {
+          return destroyList
+        }
+        //иначе добавляем в список новый астероид
+        else {
+        setDestroyList([...destroyList, asteroid.target.name])
+        }
+      }
+  }
+
+  function clearDestroyList () {
+    setDestroyList([])
   }
 
   return (
     <>
     <div className='main-content main-content_active'>
       <div className='repo-container'>
-        <ListLoading isLoading={appState.loading} repos={appState.repos} onAsteroidClick={handleAsteroidClick}/>
+        <ListLoading isLoading={appState.loading} repos={appState.repos} onAsteroidClick={handleAsteroidClick} onButtonClick={addToDestroyList}/>
       </div>
     </div>
     <AsteroidPopup asteroid={selectedAsteroid} onClose={closePopup}/>
-    <SaveWorld />
+    <SaveWorld destroyList={destroyList} resetList={clearDestroyList}/>
     </>
   );
 }

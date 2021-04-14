@@ -19,6 +19,7 @@ const Asteroid = (props ) => {
 
     function setAsteroid (asteroid) {props.onAsteroidClick(asteroid) }
     
+    function addToDestroyList (asteroid) {props.onButtonClick(asteroid)}
   
     return (
       <div className={asteroidHazardous ? 'asteroid asteroid__hazardous' : 'asteroid asteroid__unhazardous'}>
@@ -58,7 +59,7 @@ const Asteroid = (props ) => {
         <div className='asteroid__save-world'>
             <p className='asteroid__paragraph'>Оценка:</p>
             <p className='asteroid__paragraph'>{asteroidHazardous ? 'опасен' : 'не опасен'}</p>
-            <button className="asteroid__button">На уничтожение</button>
+            <button onClick={addToDestroyList} name={asteroidName} className="asteroid__button">На уничтожение</button>
         </div>
       </div>
     )
