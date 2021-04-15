@@ -4,12 +4,13 @@ import './Header.css'
 class Header extends React.Component {
     render () {
 
-        const menu = document.querySelector('.menu');
-        const mainContent = document.querySelector('.main-content');
-        const saveWorld = document.querySelector('.save-world');
+
 
         function checkRadiobox () {
             const radioInput = document.querySelectorAll('.header__radio');
+            const menu = document.querySelector('.menu');
+            const mainContent = document.querySelector('.main-content');
+            const saveWorld = document.querySelector('.save-world');
 
             for (let i = 0; i < radioInput.length; i++)
                 {
@@ -29,7 +30,7 @@ class Header extends React.Component {
         return (
             <div className='header'>
                 <div className='header__header'>
-                    <h1 className='header__title'><label htmlFor="asteroids">ARMAGEDDON-V</label></h1>
+                <label htmlFor="asteroids"><h1 className='header__title'>ARMAGEDDON-V</h1></label>
                     <p className='header__subtitle'>Сервис мониторинга и уничтожения астероидов, опасно подлетающих к Земле.</p>
                 </div>
                 <div className='header__nav'>
