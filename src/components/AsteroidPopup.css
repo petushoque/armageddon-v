@@ -11,6 +11,7 @@
     height: 0;
     opacity: 0;
     transition: height 0ms 400ms, opacity 400ms 0ms;
+    z-index: 3;
 }
 
 .asteroid-popup_active {

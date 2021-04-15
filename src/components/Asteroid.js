@@ -25,7 +25,7 @@ const Asteroid = (props ) => {
       <div className={asteroidHazardous ? 'asteroid asteroid__hazardous' : 'asteroid asteroid__unhazardous'}>
 
           <img className='asteroid__dino' src={dino} alt='Маленький динозавр'/>
-          <img className='asteroid__asteroid' src={asteroidImage} alt='Большой астероид' style={{minHeight: `${Math.floor(asteroidDiameter/1.5).toString()}px`}}/>
+          <img className='asteroid__asteroid' src={asteroidImage} alt='Большой астероид' style={{height: `${Math.floor(asteroidDiameter*4).toString()}px`}}/>
 
         <div className='asteroid__info'>
           <h2 onClick={setAsteroid} className='asteroid__title' 
