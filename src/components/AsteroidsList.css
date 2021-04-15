@@ -1,5 +1,11 @@
 .asteroid-list {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 919px) {
+    .asteroid-list {
+        padding: 0 16px 0 16px;
+    }
 }

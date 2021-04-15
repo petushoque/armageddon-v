@@ -7,6 +7,7 @@
     flex-direction: row;
     justify-content: space-between;    
     display: none;
+    box-sizing: border-box;
 }
 
 .menu_active {

@@ -125,8 +125,9 @@
     .asteroid {
         flex-direction: column;
         max-height: 600px;
+        width: 100%;
         /*ВЫСОТА ДОЛЖНА БЫТЬ ЗНАЧИТЕЛЬНО МЕНЬШЕ*/
-        margin: 0 16px 16px;
+        margin: 0 0 16px 0;
     }
     .asteroid__title {
         position: absolute;
